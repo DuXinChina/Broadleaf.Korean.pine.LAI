@@ -17,7 +17,8 @@ LAI.single=function(a,b,r)
       }
       d=cbind(b,d)
       d=subset(d,d>0)
-      colnames(d) = c("x","y","DBH","Species","Distance")####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
+      colnames(d) = c("x","y","DBH","Species","Distance")
+      ####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
       d
     }
     
@@ -89,4 +90,3 @@ LAI.single=function(a,b,r)
   colnames(N_B_LAI)=c("Needles_LAI","Broadleaf_LAI","N_L_percent","B_L_percent")
   list(LAI=LAI,Species_LAI=Species_LAI,N_B_LAI=N_B_LAI)
 }
-
