@@ -25,7 +25,8 @@ LAI.mult=function(a,b,r)
         }
         d=cbind(b,d)
         d=subset(d,d>0)
-        colnames(d) = c("x","y","DBH","Species","Distance")####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
+        colnames(d) = c("x","y","DBH","Species","Distance")
+        ####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
         d
       }
       
@@ -105,8 +106,10 @@ LAI.mult=function(a,b,r)
   {
     d[j,]=cbind(as.matrix(a[j,]),as.matrix(LAI.single(a[j,],b,r)$LAI))
     e[j,]=cbind(as.matrix(a[j,]),as.matrix(LAI.single(a[j,],b,r)$N_B_LAI))
-    info=sprintf("已完成 %d%%", round(j*100/nrow(a)))  ## 设置进度条的完成度
-    setTkProgressBar(pb, j*100/nrow(a), sprintf("进度 (%s)", info),info)  ## 设置进度条
+    info=sprintf("已完成 %d%%", round(j*100/nrow(a)))
+     ## 设置进度条的完成度
+    setTkProgressBar(pb, j*100/nrow(a), sprintf("进度 (%s)", info),info)
+    ## 设置进度条
   }
   end_time=Sys.time()  ## 记录程序结束时间
   close(pb)  
@@ -119,4 +122,3 @@ LAI.mult=function(a,b,r)
   list(LAI=d,B_N_LAI=e)
   
 }
-
