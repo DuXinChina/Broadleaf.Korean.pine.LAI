@@ -133,15 +133,15 @@ Plot.Voronoi.LAI.Sum=function(minx,maxx,miny,maxy,boundary,b,strata,r)
   Lbnew1$d=(point[1,1]-Lbnew1[,1])^2+(point[1,2]-Lbnew1[,2])^2
   Lbnew1=Lbnew1[which.min(Lbnew1$d),]
   #Class_point=as.data.frame(Class_point)
-  pb=tkProgressBar("林层1","已完成 %", 0, 100)
+  pb=tkProgressBar("Strata1","Percent complete %", 0, 100)
   for(i in 2:nrow(point))
   {
     Lbnew=subset(stra_single,stra_single[,1]>=(point[i,1]-1.5*r[1])&stra_single[,1]<=(point[i,1]+1.5*r[1])&stra_single[,2]>=(point[i,2]-1.5*r[1])&stra_single[,2]<=(point[i,2]+1.5*r[1]))
     Lbnew$d=(point[i,1]-Lbnew[,1])^2+(point[i,2]-Lbnew[,2])^2
     Lbnew=Lbnew[which.min(Lbnew$d),]
     Lbnew1=rbind(Lbnew1,Lbnew)
-    info=sprintf("已完成 %d%%", round(i*100/nrow(point)))  ## 设置进度条的完成度
-    setTkProgressBar(pb, i*100/nrow(point), "林层1" ,info)  ## 设置进度条
+    info=sprintf("Percent complete %d%%", round(i*100/nrow(point)))  ## 设置进度条的完成度
+    setTkProgressBar(pb, i*100/nrow(point), "Strata1" ,info)  ## 设置进度条
   }
   Lbnew1=Lbnew1$LAI
   close(pb)
@@ -154,7 +154,7 @@ Plot.Voronoi.LAI.Sum=function(minx,maxx,miny,maxy,boundary,b,strata,r)
     Lbnewn=subset(stra_single,stra_single[,1]>=(point[1,1]-1.5*r[j])&stra_single[,1]<=(point[1,1]+1.5*r[j])&stra_single[,2]>=(point[1,2]-1.5*r[j])&stra_single[,2]<=(point[1,2]+1.5*r[j]))
     Lbnewn$d=(point[1,1]-Lbnewn[,1])^2+(point[1,2]-Lbnewn[,2])^2
     Lbnewn=Lbnewn[which.min(Lbnewn$d),]
-    pb=tkProgressBar(paste("林层",j),"已完成 %", 0, 100)
+    pb=tkProgressBar(paste("Strata",j),"Percent complete %", 0, 100)
     
     for(i in 2:nrow(point))
     {
@@ -162,8 +162,8 @@ Plot.Voronoi.LAI.Sum=function(minx,maxx,miny,maxy,boundary,b,strata,r)
       Lbnew$d=(point[i,1]-Lbnew[,1])^2+(point[i,2]-Lbnew[,2])^2
       Lbnew=Lbnew[which.min(Lbnew$d),]
       Lbnewn=rbind(Lbnewn,Lbnew)
-      info=sprintf("已完成 %d%%", round(i*100/nrow(point)))  ## 设置进度条的完成度
-      setTkProgressBar(pb, i*100/nrow(point), paste("林层",j),info)  ## 设置进度条
+      info=sprintf("Percent complete %d%%", round(i*100/nrow(point)))  ## 设置进度条的完成度
+      setTkProgressBar(pb, i*100/nrow(point), paste("Strata",j),info)  ## 设置进度条
     }
     Lbnewn=Lbnewn$LAI
     Lbnew1=Lbnew1+Lbnewn
@@ -179,6 +179,5 @@ Plot.Voronoi.LAI.Sum=function(minx,maxx,miny,maxy,boundary,b,strata,r)
     scale_x_continuous(expand= c(0, 0))+scale_y_continuous(expand= c(0, 0))
   
 }
-
 
 

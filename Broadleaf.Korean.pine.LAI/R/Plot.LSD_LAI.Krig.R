@@ -152,13 +152,13 @@ Plot.LSD_LAI.Krig=function(minx,maxx,miny,maxy,b,seq,r,Lr)
     }
     
     d=matrix(NA,nrow(a),3)
-    pb=tkProgressBar("进度","已完成 %", 0, 100) 
+    pb=tkProgressBar("Progress","Percent complete %", 0, 100)
     star_time=Sys.time() ## 记录程序开始时间
     for(j in 1:nrow(a))
     {
       d[j,]=cbind(as.matrix(a[j,]),as.matrix(LSD_LAI(a[j,],b,r,Lr)$LSD_LAI))
-      info=sprintf("已完成 %d%%", round(j*100/nrow(a)))  ## 设置进度条的完成度
-      setTkProgressBar(pb, j*100/nrow(a), sprintf("进度 (%s)", info),info)  ## 设置进度条
+      info=sprintf("Percent complete %d%%", round(j*100/nrow(a)))  ## 设置进度条的完成度
+      setTkProgressBar(pb, j*100/nrow(a), sprintf("Progress (%s)", info),info)  ## 设置进度条
     }
     end_time=Sys.time()  ## 记录程序结束时间
     close(pb)  
@@ -232,4 +232,3 @@ Plot.LSD_LAI.Krig=function(minx,maxx,miny,maxy,b,seq,r,Lr)
   p2=p2+labs(title = "LSD_LAI")+scale_x_continuous(expand= c(0, 0))+scale_y_continuous(expand= c(0, 0))
   print(p2)
 }
-
