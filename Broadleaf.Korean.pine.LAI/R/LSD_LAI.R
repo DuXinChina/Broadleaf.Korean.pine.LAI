@@ -102,8 +102,10 @@ LSD_LAI=function(a,b,r,Lr)
     for(j in 1:nrow(a))
     {
       d[j,]=cbind(as.matrix(a[j,]),as.matrix(LAI.single(a[j,],b,r)))
-      info=sprintf("Percent complete %d%%", round(j*100/nrow(a)))  ## 设置进度条的完成度
-      setTkProgressBar(pb, j*100/nrow(a), sprintf("Progress (%s)", info),info)  ## 设置进度条
+      info=sprintf("Percent complete %d%%", round(j*100/nrow(a)))
+       ## 设置进度条的完成度
+      setTkProgressBar(pb, j*100/nrow(a), sprintf("Progress (%s)", info),info)
+       ## 设置进度条
     }
     end_time=Sys.time()  ## 记录程序结束时间
     close(pb)  
@@ -117,4 +119,3 @@ LSD_LAI=function(a,b,r,Lr)
   colnames(Lsd)=c("x","y","LSD_LAI")
   Lsd
 }
-
