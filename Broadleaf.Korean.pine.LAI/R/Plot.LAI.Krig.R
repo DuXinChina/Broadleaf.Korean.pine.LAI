@@ -164,7 +164,8 @@ Plot.LAI.Krig=function(minx,maxx,miny,maxy,b,seq,r)
   ######计算插值点的LAI
   data=LAI.mult(basexy,b,r)
   data1=data
-  coordinates(data) <- c("x","y")#定义坐标 
+  coordinates(data) <- c("x","y")
+  #定义坐标 
   spplot(data,"LAI")
   vgm1 <- variogram(LAI~1, data)
   plot(vgm1, plot.numbers = TRUE)
