@@ -14,7 +14,8 @@ Plot.LAI.Krig=function(minx,maxx,miny,maxy,b,seq,r)
     Neighbourhood.single=function(a,b,r)
     {
       ###计算样地内林木到a点的距离
-      Neighbourhood.single1=function(a,b)###计算样地内林木到a点的距离
+      Neighbourhood.single1=function(a,b)
+      ###计算样地内林木到a点的距离
       {
         c=b[,1:2]
         for (i in 1:nrow(b))
@@ -24,7 +25,8 @@ Plot.LAI.Krig=function(minx,maxx,miny,maxy,b,seq,r)
         }
         d=cbind(b,d)
         d=subset(d,d>0)
-        colnames(d) = c("x","y","DBH","Species","Distance")####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
+        colnames(d) = c("x","y","DBH","Species","Distance")
+        ####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
         d
       }
       
@@ -102,16 +104,21 @@ Plot.LAI.Krig=function(minx,maxx,miny,maxy,b,seq,r)
   {
     d=matrix(NA,nrow(a),3)
     pb=tkProgressBar("Progress","Percent complete  %", 0, 100)
-    star_time=Sys.time() ## 记录程序开始时间
+    star_time=Sys.time()
+     ## 记录程序开始时间
     for(j in 1:nrow(a))
     {
       d[j,]=cbind(as.matrix(a[j,]),as.matrix(LAI.single(a[j,],b,r)$LAI))
-      info=sprintf("Percent complete %d%%", round(j*100/nrow(a)))  ## 设置进度条的完成度
-      setTkProgressBar(pb, j*100/nrow(a), sprintf("Progress (%s)", info),info)  ## 设置进度条
+      info=sprintf("Percent complete %d%%", round(j*100/nrow(a)))
+       ## 设置进度条的完成度
+      setTkProgressBar(pb, j*100/nrow(a), sprintf("Progress (%s)", info),info)
+       ## 设置进度条
     }
-    end_time=Sys.time()  ## 记录程序结束时间
+    end_time=Sys.time()
+     ## 记录程序结束时间
     close(pb)  
-    run_time=end_time - star_time  ## 计算程序运行时间
+    run_time=end_time - star_time
+    ## 计算程序运行时间
     colnames(d)=c("x","y","LAI")
     rownames(d)=1:nrow(a)
     d=as.data.frame(d)
@@ -151,7 +158,8 @@ Plot.LAI.Krig=function(minx,maxx,miny,maxy,b,seq,r)
   coordinates(basexy1) <- ~x+y
   gridded(basexy1) <- TRUE
   colnames(basexy) <- c("x", "y")
-  basexy= dplyr::distinct(basexy)####删除重复样点
+  basexy= dplyr::distinct(basexy)
+  ####删除重复样点
   
   ######计算插值点的LAI
   data=LAI.mult(basexy,b,r)

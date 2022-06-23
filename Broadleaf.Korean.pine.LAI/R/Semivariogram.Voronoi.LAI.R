@@ -7,7 +7,8 @@ Semivariogram.Voronoi.LAI=function(minx,maxx,miny,maxy,boundary,b,strata,r,seq)
 ####加载计算泰森多边形叶面积指数的function
 Voronoi.LAI.mult=function(minx,maxx,miny,maxy,boundary,b,r)
 {
-  library(deldir)####deldir命令计算泰森多边形用
+  library(deldir)
+  ####deldir命令计算泰森多边形用
   ###在样地内均匀布点，以生成正六边形的蜂窝状泰森多边�?
   ###基于正六变形外接圆半径r去推算样地中布点行数
   ###基于外接圆半径r去推算正六边形的边心�?
@@ -190,7 +191,8 @@ colnames(point)=c("x","y","LAI")
 point=as.data.frame(point)
 
 data1=point
-coordinates(point) <- c("x","y")#定义坐标
+coordinates(point) <- c("x","y")
+#定义坐标
 spplot(point,"LAI")
 vgm1 <- variogram(LAI~1, point)
 plot(vgm1, plot.numbers = TRUE)
@@ -206,5 +208,4 @@ pre=rbind(as.matrix(spre),as.matrix(bpre))
 Coefficient_of_Determination=1- sum((pre-vgm1$gamma)^2)/sum((vgm1$gamma-mean(vgm1$gamma))^2)
 print(paste("Coefficient_of_Determination=",Coefficient_of_Determination))
 }
-
 
