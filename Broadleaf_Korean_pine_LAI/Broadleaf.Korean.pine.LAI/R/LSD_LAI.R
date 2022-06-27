@@ -21,7 +21,8 @@ LSD_LAI=function(a,b,r,Lr)
     }
     d=cbind(acenterpoint,d)
     d=subset(d,d>0)
-    colnames(d) = c("x","y","Distance")####x,y为样点坐标，Distance为样点与中心点a间的距离
+    colnames(d) = c("x","y","Distance")
+    ####x,y为样点坐标，Distance为样点与中心点a间的距离
     d
     Neighbourhood.single=subset(d,d$Distance<=Lr)
     Neighbourhood.single
@@ -39,7 +40,8 @@ LSD_LAI=function(a,b,r,Lr)
     {
       Neighbourhood.single=function(a,b,r)
       {
-        Neighbourhood.single1=function(a,b)###计算样地内林木到a点的距离
+        Neighbourhood.single1=function(a,b)
+        ###计算样地内林木到a点的距离
         {
           c=b[,1:2]
           for (i in 1:nrow(b))
@@ -49,7 +51,8 @@ LSD_LAI=function(a,b,r,Lr)
           }
           d=cbind(b,d)
           d=subset(d,d>0)
-          colnames(d) = c("x","y","DBH","Species","Distance")####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
+          colnames(d) = c("x","y","DBH","Species","Distance")
+          ####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
           d
         }
         Neighbourhood.single1=Neighbourhood.single1(a,b)
@@ -94,13 +97,15 @@ LSD_LAI=function(a,b,r,Lr)
     }
     d=matrix(NA,nrow(a),3)
     e=matrix(NA,nrow(a),6)
-    pb=tkProgressBar("进度","已完成 %", 0, 100) 
+    pb=tkProgressBar("Progress","Percent complete %", 0, 100)
     star_time=Sys.time() ## 记录程序开始时间
     for(j in 1:nrow(a))
     {
       d[j,]=cbind(as.matrix(a[j,]),as.matrix(LAI.single(a[j,],b,r)))
-      info=sprintf("已完成 %d%%", round(j*100/nrow(a)))  ## 设置进度条的完成度
-      setTkProgressBar(pb, j*100/nrow(a), sprintf("进度 (%s)", info),info)  ## 设置进度条
+      info=sprintf("Percent complete %d%%", round(j*100/nrow(a)))
+       ## 设置进度条的完成度
+      setTkProgressBar(pb, j*100/nrow(a), sprintf("Progress (%s)", info),info)
+       ## 设置进度条
     }
     end_time=Sys.time()  ## 记录程序结束时间
     close(pb)  
@@ -114,5 +119,3 @@ LSD_LAI=function(a,b,r,Lr)
   colnames(Lsd)=c("x","y","LSD_LAI")
   Lsd
 }
-
-

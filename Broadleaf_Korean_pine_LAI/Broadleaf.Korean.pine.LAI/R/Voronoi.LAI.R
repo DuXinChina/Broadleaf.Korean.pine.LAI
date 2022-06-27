@@ -1,7 +1,8 @@
 
 Voronoi.LAI=function(minx,maxx,miny,maxy,boundary,b,r)
 {
-  library(deldir)####deldir命令计算泰森多边形用
+  library(deldir)
+  ####deldir命令计算泰森多边形用
   dis=r/2*sqrt(3)
   ####���ɾ��ȷֲ��� 
   xpoint=seq(minx,maxx,2*dis)
@@ -101,4 +102,3 @@ Voronoi.LAI=function(minx,maxx,miny,maxy,boundary,b,r)
   bnew=subset(bnew,bnew[,1]>(minx+boundary)&bnew[,1]<(maxx-boundary)&bnew[,2]>(miny+boundary)&bnew[,2]<(maxy-boundary))
   bnew
 }
-

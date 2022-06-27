@@ -36,7 +36,8 @@ LSD_LAI_mult=function(a,b,r,Lr)
       }
       d=cbind(acenterpoint,d)
       d=subset(d,d>0)
-      colnames(d) = c("x","y","Distance")####x,y为样点坐标，Distance为样点与中心点a间的距离
+      colnames(d) = c("x","y","Distance")
+      ####x,y为样点坐标，Distance为样点与中心点a间的距离
       d
       
       ###绘制半径为r的尺度圆，以找出样地内位于以a为圆心r为半径尺度圆内的样点
@@ -69,7 +70,8 @@ LSD_LAI_mult=function(a,b,r,Lr)
             }
             d=cbind(b,d)
             d=subset(d,d>0)
-            colnames(d) = c("x","y","DBH","Species","Distance")####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
+            colnames(d) = c("x","y","DBH","Species","Distance")
+            ####x,y为林木坐标Species为树种,DBH为胸径，Distance为林木与中心点a1间的距离
             d
           }
           
@@ -146,19 +148,23 @@ LSD_LAI_mult=function(a,b,r,Lr)
   
   d=matrix(NA,nrow(a),3)
   pb=tkProgressBar("Progress","Percent complete %", 0, 100)
-  star_time=Sys.time() ## 记录程序开始时间
+  star_time=Sys.time()
+   ## 记录程序开始时间
   for(j in 1:nrow(a))
   {
     d[j,]=cbind(as.matrix(a[j,]),as.matrix(LSD_LAI(a[j,],b,r,Lr)$LSD_LAI))
-    info=sprintf("Percent complete %d%%", round(j*100/nrow(a)))  ## 设置进度条的完成度
-    setTkProgressBar(pb, j*100/nrow(a), sprintf("Progress (%s)", info),info)  ## 设置进度条
+    info=sprintf("Percent complete %d%%", round(j*100/nrow(a)))
+     ## 设置进度条的完成度
+    setTkProgressBar(pb, j*100/nrow(a), sprintf("Progress (%s)", info),info)
+     ## 设置进度条
   }
-  end_time=Sys.time()  ## 记录程序结束时间
+  end_time=Sys.time()
+   ## 记录程序结束时间
   close(pb)  
-  run_time=end_time - star_time  ## 计算程序运行时间
+  run_time=end_time - star_time
+  ## 计算程序运行时间
   colnames(d)=c("x","y","LSD_LAI")
   rownames(d)=1:nrow(a)
   d=as.data.frame(d)
   d
 }
-
