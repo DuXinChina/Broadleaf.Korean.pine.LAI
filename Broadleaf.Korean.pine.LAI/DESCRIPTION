@@ -1,14 +1,10 @@
 Package: Broadleaf.Korean.pine.LAI
 Type: Package
-Title: 本包可以以传统方法及分层泰森多变形法分析阔叶红松林叶面积指数
-Version: 0.1.0
+Title: What the Package Does (Title Case)
+Version: 2.0.0
 Author: 杜昕 董雪
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: 
+Description: 该包可用传统方法与分层泰森多边形法分析阔叶红松林叶面积指数
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Depends: 
-    R (>= 2.10)
-RoxygenNote: 7.1.1
