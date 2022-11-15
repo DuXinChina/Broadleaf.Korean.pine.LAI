@@ -5,14 +5,14 @@ Semivariogram.Voronoi.LAI=function(minx,maxx,miny,maxy,boundary,b,strata,r,seq)
   library(gstat)
   #library(tcltk)
   library(deldir)
-####åŠ è½½è®¡ç®—æ³°æ£®å¤šè¾¹å½¢å¶é¢ç§¯æŒ‡æ•°çš„function
+####é”çŠºæµ‡ç’ï¼„ç•»å¨‰ç‰ˆï¼æ¾¶æ°³ç«Ÿè¤°ãˆ å½¾é—ˆãˆ¢Ğé¸å›¨æšŸé¨åˆ¦unction
 Voronoi.LAI.mult=function(minx,maxx,miny,maxy,boundary,b,r)
   {
-    ###ÔÚÑùµØÄÚ¾ùÔÈ²¼µã£¬ÒÔÉú³ÉÕıÁù±ßĞÎµÄ·äÎÑ×´Ì©É­¶à±ßĞÎ
-    ###»ùÓÚÕıÁù±äĞÎÍâ½ÓÔ²°ë¾¶rÈ¥ÍÆËãÑùµØÖĞ²¼µãĞĞÊı
-    ###»ùÓÚÍâ½ÓÔ²°ë¾¶rÈ¥ÍÆËãÕıÁù±ßĞÎµÄ±ßĞÄ¾à
+    ###åœ¨æ ·åœ°å†…å‡åŒ€å¸ƒç‚¹ï¼Œä»¥ç”Ÿæˆæ­£å…­è¾¹å½¢çš„èœ‚çªçŠ¶æ³°æ£®å¤šè¾¹å½¢
+    ###åŸºäºæ­£å…­å˜å½¢å¤–æ¥åœ†åŠå¾„rå»æ¨ç®—æ ·åœ°ä¸­å¸ƒç‚¹è¡Œæ•°
+    ###åŸºäºå¤–æ¥åœ†åŠå¾„rå»æ¨ç®—æ­£å…­è¾¹å½¢çš„è¾¹å¿ƒè·
     dis=r/2*sqrt(3)
-    ####Éú³É¾ùÔÈ·Ö²¼µã 
+    ####ç”Ÿæˆå‡åŒ€åˆ†å¸ƒç‚¹ 
     xpoint=seq(minx,maxx,2*dis)
     ypoint=seq(miny,maxy,1.5*r)
     ly=length(ypoint)
@@ -28,10 +28,10 @@ Voronoi.LAI.mult=function(minx,maxx,miny,maxy,boundary,b,r)
     }
     colnames(point)=c("x","y","ID")
     
-    ####¼ÆËãÒÔµ¥Ò»ÁÖÄ¾ÎªÖĞĞÄ£¬rÎª°ë¾¶·¶Î§ÍâµÄÈ«²¿Ñùµã
+    ####è®¡ç®—ä»¥å•ä¸€æ—æœ¨ä¸ºä¸­å¿ƒï¼Œrä¸ºåŠå¾„èŒƒå›´å¤–çš„å…¨éƒ¨æ ·ç‚¹
     pointoutside.single=function(a)
     {
-      ####É¾³ıÁÖÄ¾aÖÜÎ§°ë¾¶rÒÔÄÚµÄÑùµã
+      ####åˆ é™¤æ—æœ¨aå‘¨å›´åŠå¾„rä»¥å†…çš„æ ·ç‚¹
       pointinside=subset(point,point[,1]<a[,1]+r&point[,1]>a[,1]-r&point[,2]<a[,2]+r&point[,2]>a[,2]-r)
       pointinside=as.data.frame(pointinside)
       if(nrow(pointinside)>0)
@@ -49,7 +49,7 @@ Voronoi.LAI.mult=function(minx,maxx,miny,maxy,boundary,b,r)
         pointinside=subset(d,d[,4]<r)
         pointinside=pointinside[which.min(pointinside[,4]),]
         pointinside=pointinside[,1:3]
-        ###¼ÆËãÈ¦ÄÚµãµÄ²¹¼¯ºÏ
+        ###è®¡ç®—åœˆå†…ç‚¹çš„è¡¥é›†åˆ
         pointoutside_ID=setdiff(point[,3],pointinside[,3])
         pointoutside=point[pointoutside_ID,1:3]
       }
@@ -59,7 +59,7 @@ Voronoi.LAI.mult=function(minx,maxx,miny,maxy,boundary,b,r)
       }
       pointoutside
     }
-    ###ÒÔÑ­»·Óï¾ä¼ÆËã¸÷ÁÖÄ¾ÎªÖĞĞÄ£¬rÎª°ë¾¶·¶Î§ÍâµÄÈ«²¿ÑùµãµÄ½»¼¯
+    ###ä»¥å¾ªç¯è¯­å¥è®¡ç®—å„æ—æœ¨ä¸ºä¸­å¿ƒï¼Œrä¸ºåŠå¾„èŒƒå›´å¤–çš„å…¨éƒ¨æ ·ç‚¹çš„äº¤é›†
     b_for=pointoutside.single(b[1,1:2])[,3]
     for(i in 2:nrow(b))
     {
@@ -67,67 +67,67 @@ Voronoi.LAI.mult=function(minx,maxx,miny,maxy,boundary,b,r)
       b_for=intersect(b_for,bn)
     }
     point=point[b_for,1:2]
-    ####½«¾ùÔÈ·Ö²¼µÄÊı¾İµãµ¼ÎªÁÖÄ¾Êı¾İbµÄÏàÍ¬ĞÎÊ½
+    ####å°†å‡åŒ€åˆ†å¸ƒçš„æ•°æ®ç‚¹å¯¼ä¸ºæ—æœ¨æ•°æ®bçš„ç›¸åŒå½¢å¼
     point=cbind(point,0)
     point=as.data.frame(point)
     point$Species=c("LX")
     colnames(point)=c("x","y","DBH","Species")
-    ####½«Ëæ»ú·Ö²¼µãÓëÔ­Ê¼Êı¾İb½áºÏ
+    ####å°†éšæœºåˆ†å¸ƒç‚¹ä¸åŸå§‹æ•°æ®bç»“åˆ
     bnew=rbind(point,b)
-    ####É¾³ıÑùµØÖĞÖØ¸´Ñùµã
+    ####åˆ é™¤æ ·åœ°ä¸­é‡å¤æ ·ç‚¹
     bnew=bnew[deldir(bnew[,1],bnew[,2])$ind.orig,]
-    ####¼ÆËãÌ©É­¶à±ßĞÎµÄÃæ»ı
+    ####è®¡ç®—æ³°æ£®å¤šè¾¹å½¢çš„é¢ç§¯
     deldir_area=deldir(bnew[,1],bnew[,2])$summary$dir.area
-    ####½«Êı¾İbnewºÏ²¢ĞÎ³ÉĞÂµÄbnew
+    ####å°†æ•°æ®bnewåˆå¹¶å½¢æˆæ–°çš„bnew
     bnew=cbind(bnew,deldir_area)
     
-    ####°´ÕÕÎïÖÖÑùµØÄÚµÄÁÖÄ¾·ÖÀà
+    ####æŒ‰ç…§ç‰©ç§æ ·åœ°å†…çš„æ—æœ¨åˆ†ç±»
     HS=subset(bnew,bnew$Species=="HS") 
-    #ºìËÉ
+    #çº¢æ¾
     ZD=subset(bnew,bnew$Species=="ZD")
-    #×Ïé²
+    #ç´«æ¤´
     KD=subset(bnew,bnew$Species=="KD")
-    #¿·é²
+    #ç³ æ¤´
     MGL=subset(bnew,bnew$Species=="MGL")
-    #ÃÉ¹Åèİ
+    #è’™å¤æ 
     SQL=subset(bnew,bnew$Species=="SQL")
-    #Ë®ÇúÁø
+    #æ°´æ›²æŸ³
     HTQ=subset(bnew,bnew$Species=="HTQ")
-    #ºúÌÒé±
+    #èƒ¡æ¡ƒæ¥¸
     HBL=subset(bnew,bnew$Species=="HBL")
-    #»Æ²¤ÂÜ
+    #é»„è è
     SMQ=subset(bnew,bnew$Species=="SMQ")
-    #É«Ä¾éÊ
+    #è‰²æœ¨æ§­
     QKQ=subset(bnew,bnew$Species=="QKQ")
-    #Çà¿¬éÊ
+    #é’æ¥·æ§­
     JSQ=subset(bnew,bnew$Species=="JSQ")
-    #¼ÙÉ«éÊ
+    #å‡è‰²æ§­
     NJQ=subset(bnew,bnew$Species=="NJQ")
-    #Å¡½îéÊ
+    #æ‹§ç­‹æ§­
     BNQ=subset(bnew,bnew$Species=="BNQ")
-    #°×Å£éÊ
+    #ç™½ç‰›æ§­
     HKQ=subset(bnew,bnew$Species=="HKQ")
-    #»¨¿¬éÊ
+    #èŠ±æ¥·æ§­
     CY=subset(bnew,bnew$Species=="CY")
-    #´ºÓÜ
+    #æ˜¥æ¦†
     BH=subset(bnew,bnew$Species=="BH")
-    #°×èë
+    #ç™½æ¡¦
     HH=subset(bnew,bnew$Species=="HH")
-    #»µ»±
+    #åæ§
     LS=subset(bnew,bnew$Species=="LS")
-    #ÀäÉ¼
+    #å†·æ‰
     YS=subset(bnew,bnew$Species=="YS")
-    #ÔÆÉ¼
+    #äº‘æ‰
     FH=subset(bnew,bnew$Species=="FH")
-    #·ãèë
+    #æ«æ¡¦
     LYY=subset(bnew,bnew$Species=="LYY")
-    #ÁÑÒ¶ÓÜ
+    #è£‚å¶æ¦†
     QT=subset(bnew,bnew$Species=="QT")
-    #ÆäËû
+    #å…¶ä»–
     LX=subset(bnew,bnew$Species=="LX")
-    #ÁÖÏ¶
+    #æ—éš™
     
-    ####µ¼ÈëÒ¶Ãæ»ıÖ¸Êı·½³Ì
+    ####å¯¼å…¥å¶é¢ç§¯æŒ‡æ•°æ–¹ç¨‹
     HS$LAI= (0.04321* HS$DBH^1.831)/(108.786/1000*HS$deldir_area)
     ZD$LAI=(0.02540* ZD$DBH^1.632)/(33.583/1000*ZD$deldir_area)
     KD$LAI=(0.01034* KD$DBH^1.797)/(27.086 /1000*KD$deldir_area)
@@ -151,9 +151,9 @@ Voronoi.LAI.mult=function(minx,maxx,miny,maxy,boundary,b,r)
     QT$LAI=0.0081*QT$DBH^2.3418*26.63/QT$deldir_area
     LX$LAI=0
     
-    ####½«¸÷¸öÊ÷ÖÖµÄ¼ÆËã½á¹ûºÏ²¢
+    ####å°†å„ä¸ªæ ‘ç§çš„è®¡ç®—ç»“æœåˆå¹¶
     bnew=rbind(HS,LS,YS,ZD,KD,MGL,SQL,HTQ,HBL,SMQ,QKQ,HKQ,JSQ,NJQ,BNQ,CY,BH,HH,FH,LYY,QT,LX)
-    ####É¾³ı»º³åÇøÄÚµÄÑùµã
+    ####åˆ é™¤ç¼“å†²åŒºå†…çš„æ ·ç‚¹
     bnew=subset(bnew,bnew[,1]>(minx+boundary)&bnew[,1]<(maxx-boundary)&bnew[,2]>(miny+boundary)&bnew[,2]<(maxy-boundary))
     bnew
   }
@@ -162,11 +162,11 @@ strata=c(0,strata,Inf)
 Forest_strata=list()
 for (i in 1:(length(strata)-1))
 {
-  Forest_strata[[i]]=subset(b,b$H>strata[i]&b$H<strata[i+1])
+  Forest_strata[[i]]=subset(b,b$H>=strata[i]&b$H<strata[i+1])
   Forest_strata[[i]]=Voronoi.LAI.mult(minx,maxx,miny,maxy,0,Forest_strata[[i]][,c(1:3,5)],r[i])
 }
 
-####ç”Ÿæˆæ ·ç‚¹ä»¥å¤‡æ—åˆ†å°ºåº¦åœ°ç»Ÿè®¡åˆ†æ?
+####é¢ç†¸åšéé£å£æµ ãƒ¥î˜¬é‹æ¥€åçå“„å®³é¦æ‰®ç²ºç’â€³åé‹?
 pointx=seq(minx+boundary,maxx-boundary,length.out=seq+1)
 pointy=seq(miny+boundary,maxy-boundary,length.out=seq+1)
 point=expand.grid(pointx, pointy)
@@ -198,9 +198,9 @@ ygrid.right.bottom=seq(minyb+0.25*(maxyb-minyb)-0.5/seq*(maxyb-minyb),minyb+0.25
 basexy.right.bottom=expand.grid(xgrid.right.bottom, ygrid.right.bottom)
 
 point=rbind(point,basexy.cen,basexy.left.top,basexy.left.bottom,basexy.right.top,basexy.right.bottom)
-##æå–ç¬¬ä¸€ä¸ªæ—å±?
+##é»æ„¬å½‡ç»—îƒ¿ç«´æ¶“î…ç„ç?
 stra_single=Forest_strata[[1]]
-####å¯¹å„æ ·ç‚¹æ‰€å±æ³°æ£®å¤šè¾¹å½¢è¿›è¡Œåˆ†ç±»,è®¡ç®—ç¬¬ä¸€ä¸ªæ—å±‚å„ç‚¹çš„å¶é¢ç§¯æŒ‡æ•?
+####ç€µç‘°æ‚‡éé£å£éµï¿½çç‚´å˜²å¦«î†¼î˜¿æˆç‘°èˆ°æ©æ¶œî”‘é’å—™è¢«,ç’ï¼„ç•»ç»—îƒ¿ç«´æ¶“î…ç„çå‚šæ‚‡éåœ­æ®‘é™å •æ½°ç»‰îˆ›å¯šé?
 Lbnew1=subset(stra_single,stra_single[,1]>=(point[1,1]-1.5*r[1])&stra_single[,1]<=(point[1,1]+1.5*r[1])&stra_single[,2]>=(point[1,2]-1.5*r[1])&stra_single[,2]<=(point[1,2]+1.5*r[1]))
 Lbnew1$d=(point[1,1]-Lbnew1[,1])^2+(point[1,2]-Lbnew1[,2])^2
 Lbnew1=Lbnew1[which.min(Lbnew1$d),]
@@ -215,7 +215,7 @@ for(i in 2:nrow(point))
 Lbnew1=Lbnew1$LAI
 
 
-###æå–å…¶ä½™æ—å±‚çš„å¶é¢ç§¯æŒ‡æ•°
+###é»æ„¬å½‡éæœµç¶‘é‹æ¥€çœ°é¨å‹«å½¾é—ˆãˆ¢Ğé¸å›¨æšŸ
 for (j in 2:length(Forest_strata))
 {
   stra_single=Forest_strata[[j]]
@@ -238,7 +238,7 @@ point=as.data.frame(point)
 
 data1=point
 coordinates(point) <- c("x","y")
-#å®šä¹‰åæ ‡
+#ç€¹æ°«ç®Ÿé§æ„­çˆ£
 spplot(point,"LAI")
 vgm1 <- variogram(LAI~1, point)
 plot(vgm1, plot.numbers = TRUE)
