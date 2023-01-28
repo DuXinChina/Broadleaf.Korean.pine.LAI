@@ -169,4 +169,3 @@ point = cbind(point,LAIsum1,Strata_cont)
 colnames(point) = c("x", "y", rep(c("Species","LAI"),length(strata)-1),"SumLAI","Strata_cont")
 point
 }
-Single.point.Voronoi.LAI.sum(minx, maxx, miny, maxy, boundary,a,b,r)
