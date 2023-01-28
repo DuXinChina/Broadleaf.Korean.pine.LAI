@@ -1,0 +1,10 @@
+Package: Broadleaf.Korean.pine.LAI
+Type: Package
+Title: 
+Version: 0.1.0
+Author: duxin dongxue
+Maintainer:1608898299@qq.com
+Description: .
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
