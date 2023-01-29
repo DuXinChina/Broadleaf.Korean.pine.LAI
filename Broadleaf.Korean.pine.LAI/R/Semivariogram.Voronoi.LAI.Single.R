@@ -75,7 +75,7 @@ Semivariogram.Voronoi.LAI.Single=function (minx, maxx, miny, maxy, boundary, b, 
     JSQ = subset(bnew, bnew$Species == "JSQ")
     NJQ = subset(bnew, bnew$Species == "NJQ")
     BNQ = subset(bnew, bnew$Species == "BNQ")
-    HKQ = subset(bnew, HKQ$Species == "HKQ")
+    HKQ = subset(bnew, bnew$Species == "HKQ")
     CY = subset(bnew, bnew$Species == "CY")
     BH = subset(bnew, bnew$Species == "BH")
     HH = subset(bnew, bnew$Species == "HH")
