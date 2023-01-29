@@ -1,5 +1,5 @@
 
-Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b, r,Lr) 
+Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b,strata,r,Lr) 
   {
   library(tcltk)
   library(deldir)
