@@ -1,6 +1,7 @@
 
 Local.mult.point.Voronoi.LAI=function (minx, maxx, miny, maxy, boundary,a, b, r, Lr) 
 {
+  
 library(tcltk)
 Local.single.point.Voronoi.LAI=function (minx, maxx, miny, maxy, boundary,a, b, r, Lr) 
 {
