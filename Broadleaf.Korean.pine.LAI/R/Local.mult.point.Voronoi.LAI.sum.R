@@ -1,10 +1,11 @@
 
-Local.mult.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b, r,Lr) 
-{
-Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b, r,Lr) 
+Local.mult.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b,strata,r,Lr) 
 {
   library(tcltk)
   library(deldir)
+Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b, r,Lr) 
+{
+
   Voronoi.LAI.mult = function(minx, maxx, miny, maxy, boundary, 
                               b, r) {
     dis = r/2 * sqrt(3)
