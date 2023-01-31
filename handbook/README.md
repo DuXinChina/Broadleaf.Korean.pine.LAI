@@ -350,14 +350,14 @@ p=Broadleaf.Korean.pine.LAI::Plot.LAI.Krig(5,45,5,45,b=b,seq=20,r=3)
 ## 2   Sph 146.1265 7.064373
 ```
 
-![2.3.1](C:\Users\dell\Desktop\handbook\assets\2.3.1.png)
+![2.3.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.3.1.png)
 
 ```r
 ## [1] "Coefficient_of_Determination= 0.979977519972073"
 ## [using ordinary kriging]
 ```
 
-![2.3.2](C:\Users\dell\Desktop\handbook\assets\2.3.2.png)
+![2.3.2](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.3.2.png)
 
 ```r
 p1=p+geom_vline(xintercept = c(5,45),linetype=2)+geom_hline(yintercept =c(5,45),linetype=2)
@@ -374,7 +374,7 @@ p2=p1+geom_point(data=b,aes(x=x,y=y),size=b$DBH/8,col="grey4",alpha=0.2)+scale_x
 p2
 ```
 
-![2.3.3](C:\Users\dell\Desktop\handbook\assets\2.3.3.png)
+![2.3.3](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.3.3.png)
 
 ### **2.4 Standing_Forest_LAI(minx,maxx,miny,maxy,b)**
 
@@ -549,14 +549,14 @@ p=Broadleaf.Korean.pine.LAI::Plot.LSD_LAI.Krig(minx=5,maxx=45,miny=5,maxy=45,b=b
 ## 2   Sph 14.475010 3.210693
 ```
 
-![2.7.1](C:\Users\dell\Desktop\handbook\assets\2.7.1.png)
+![2.7.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.7.1.png)
 
 ```r
 ## [1] "Coefficient_of_Determination= 0.734423332692097"
 ## [using ordinary kriging]
 ```
 
-![2.7.2](C:\Users\dell\Desktop\handbook\assets\2.7.2.png)
+![2.7.2](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.7.2.png)
 
 ```r
 p1=p+geom_vline(xintercept = c(5,45),linetype=2)+geom_hline(yintercept =c(5,45),linetype=2)
@@ -573,7 +573,7 @@ p2=p1+geom_point(data=b,aes(x=x,y=y),size=b$DBH/8,col="grey4",alpha=0.2)+scale_x
 p2
 ```
 
-![2.7.3](C:\Users\dell\Desktop\handbook\assets\2.7.3.png)
+![2.7.3](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.7.3.png)
 
 ### **2.8 Voronoi.LAI(minx,maxx,miny,maxy,boundary,b,r)**
 
@@ -825,7 +825,7 @@ p1=p+geom_point(data=b,aes(x=x,y=y),size=b$DBH/8,col="grey4",alpha=0.2)
 p1
 ```
 
-![2.9.1](C:\Users\dell\Desktop\handbook\assets\2.9.1.png)
+![2.9.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.9.1.png)
 
 ### 2.10 Single.point.Voronoi.LAI(minx,maxx,miny,maxy,boundary,a,b,r)
 
@@ -1134,7 +1134,7 @@ Broadleaf.Korean.pine.LAI::Semivariogram.Voronoi.LAI.Single(minx=0,maxx=50,miny=
 ## 2   Sph 97.11761 6.263462
 ```
 
-![2.14.1](C:\Users\dell\Desktop\handbook\assets\2.14.1.png)
+![2.14.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.14.1.png)
 
 ```r
 ## [1] "Coefficient_of_Determination= 0.949030801598704"
@@ -1191,7 +1191,7 @@ p2=p1+geom_point(data=b,aes(x=x,y=y),size=b$DBH/8,col="grey4",alpha=0.2)+scale_x
 p2
 ```
 
-![2.15.1](C:\Users\dell\Desktop\handbook\assets\2.15.1.png)
+![2.15.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.15.1.png)
 
 ### 2.16 Single.point.Voronoi.LAI.sum(minx,maxx,miny,maxy,boundary,a,b,strata,r)
 
@@ -1527,7 +1527,7 @@ Broadleaf.Korean.pine.LAI::Semivariogram.Voronoi.LAI(minx=0,maxx=50,miny=0,maxy=
 ## 2   Sph 146.8565 5.89282
 ```
 
-![2.20.1](C:\Users\dell\Desktop\handbook\assets\2.20.1.png)
+![2.20.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.20.1.png)
 
 ```r
 ## [1] "Coefficient_of_Determination= 0.970238996384574"
