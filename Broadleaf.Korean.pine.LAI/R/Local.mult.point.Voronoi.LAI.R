@@ -165,7 +165,7 @@ Local.single.point.Voronoi.LAI=function (minx, maxx, miny, maxy, boundary,a, b, 
     Neighbourhood.single
   }
   Local_point = rbind(a, Neighbourhood.single(a,acenterpoint,Lr)[, 1:2])
-  
+  Local_point = subset(Local_point,Local_point$x>minx+boundary & Local_point$x<maxx-boundary & Local_point$y>miny+boundary & Local_point$y<maxy-boundary)
   Local=mult.point.Voronoi.LAI(minx, maxx, miny, maxy, boundary, Local_point, b, r)
   Local1=Local[-1,]
   LX=Local1[which(Local1$LAI==0),]
