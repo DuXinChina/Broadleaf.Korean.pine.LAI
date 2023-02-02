@@ -138,6 +138,7 @@ Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a
   acenterpoint = as.data.frame(acenterpoint)
   colnames(acenterpoint)=c("x","y")
   acenterpoint=rbind(a,acenterpoint)
+  acenterpoint = subset(acenterpoint,acenterpoint$x>minx+boundary & acenterpoint$x<maxx-boundary & acenterpoint$y>miny+boundary & acenterpoint$y<maxy-boundary)
   point = acenterpoint
   stra_single = Forest_strata[[1]]
   Lbnew1 = subset(stra_single, stra_single[, 1] >= (point[1, 
