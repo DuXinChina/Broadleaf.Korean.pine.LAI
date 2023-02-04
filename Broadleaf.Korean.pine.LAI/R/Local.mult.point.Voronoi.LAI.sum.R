@@ -113,9 +113,7 @@ Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a
     bnew = rbind(HS, LS, YS, ZD, KD, MGL, SQL, HTQ, HBL, 
                  SMQ, QKQ, HKQ, JSQ, NJQ, BNQ, CY, BH, HH, FH, LYY, 
                  QT, LX)
-    bnew = subset(bnew, bnew[, 1] > (minx + boundary) & bnew[, 
-                                                             1] < (maxx - boundary) & bnew[, 2] > (miny + boundary) & 
-                    bnew[, 2] < (maxy - boundary))
+    #bnew = subset(bnew, bnew[, 1] > (minx + boundary) & bnew[, 1] < (maxx - boundary) & bnew[, 2] > (miny + boundary) & bnew[, 2] < (maxy - boundary))
     bnew
   }
   strata = c(0, strata, Inf)
