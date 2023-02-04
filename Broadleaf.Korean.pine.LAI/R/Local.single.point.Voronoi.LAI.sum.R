@@ -135,7 +135,7 @@ Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a
   acenterpoint = as.data.frame(acenterpoint)
   colnames(acenterpoint)=c("x","y")
   acenterpoint=rbind(a,acenterpoint)
-    acenterpoint = subset(acenterpoint,acenterpoint$x>minx+boundary & acenterpoint$x<maxx-boundary & acenterpoint$y>miny+boundary & acenterpoint$y<maxy-boundary)
+    acenterpoint = subset(acenterpoint,acenterpoint$x>minx & acenterpoint$x<maxx & acenterpoint$y>miny & acenterpoint$y<maxy)
       Neighbourhood.single = function(a, acenterpoint, Lr) {
       c = acenterpoint
       for (i in 1:nrow(acenterpoint)) {
