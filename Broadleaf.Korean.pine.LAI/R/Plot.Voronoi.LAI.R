@@ -172,7 +172,10 @@ Plot.Voronoi.LAI=function (minx, maxx, miny, maxy, boundary, b, r)
   xy4 = as.data.frame(xy4)
   colnames(xy4) = c("x", "y", "group")
   xy = rbind(xy1, xy2, xy3, xy4)
-  ab12_1=subset(ab12_1,ab12_1$LAI>0.002)
+  ab12_1[which(ab12_1$x>maxx),]$x=maxx
+  ab12_1[which(ab12_1$x<minx),]$x=minx
+  ab12_1[which(ab12_1$y<miny),]$y=miny
+  ab12_1[which(ab12_1$y>maxy),]$y=maxy
   ggplot() + geom_polygon(data = ab12_1, aes(x = x, y = y, 
                                              group = group, fill = LAI), colour = "black") + 
     scale_fill_gradientn(colours = c("white", "yellow2", 
