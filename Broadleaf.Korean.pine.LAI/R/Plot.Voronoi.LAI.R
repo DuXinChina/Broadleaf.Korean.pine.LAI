@@ -183,5 +183,5 @@ Plot.Voronoi.LAI=function (minx, maxx, miny, maxy, boundary, b, r)
     geom_vline(xintercept = c(minx + boundary, maxx - boundary), 
                linetype = 2, size = 1) + geom_hline(yintercept = c(miny + 
                                                                      boundary, maxy - boundary), linetype = 2, size = 1) + 
-    theme_bw()
+    theme_bw()+ theme(panel.grid=element_blank())
 }
