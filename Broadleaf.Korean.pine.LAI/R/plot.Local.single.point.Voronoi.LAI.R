@@ -338,8 +338,6 @@ for(i in 1:n)
 p1 = SpatialPolygons(listpolygons, 1:n)
 poldata= createSPComment(p1)
 poldata=st_as_sf(poldata)
-plot(poldata)
-plot(poldata$geometry)
 poldata$LAI=unique(ab12_1$LAI)
 
 
@@ -348,6 +346,7 @@ ggplot(poldata) +
   scale_fill_gradientn(colours = c("lightyellow","yellow", "yellow2", "green", "green3", "green4"))+
   geom_point(data=b,aes(x=x,y=y,shape=Species,color=Species))+
   theme_classic()+
-  geom_circle(data=pointa,aes(x0=x, y0=y,r=Lr),fill="white",color="black",alpha=0.7)
+  geom_circle(data=pointa,aes(x0=x, y0=y,r=Lr),color="black",alpha=0.7)+
+  geom_point(data=pointa,aes(x=x,y=y,size=1))
 
 }
