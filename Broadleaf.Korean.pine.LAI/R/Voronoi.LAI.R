@@ -104,6 +104,6 @@ Voronoi.LAI=function (minx, maxx, miny, maxy, boundary, b, r)
   LX$LAI = 0
   bnew = rbind(HS, LS, YS, ZD, KD, MGL, SQL, HTQ, HBL, SMQ, 
                QKQ, HKQ, JSQ, NJQ, BNQ, CY, BH, HH, FH, LYY, QT, LX)
-  
+  bnew=subset(bnew,bnew$LAI>0)
   bnew
 }
