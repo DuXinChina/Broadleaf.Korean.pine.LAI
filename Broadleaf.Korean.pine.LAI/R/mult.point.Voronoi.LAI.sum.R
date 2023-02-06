@@ -9,8 +9,8 @@ Single.point.Voronoi.LAI.sum=function(minx, maxx, miny, maxy, boundary,a,b,r)
   Voronoi.LAI.mult = function(minx, maxx, miny, maxy, boundary, 
                               b, r) {
     dis = r/2 * sqrt(3)
-    xpoint = seq(minx, maxx, 2 * dis)
-    ypoint = seq(miny, maxy, 1.5 * r)
+    xpoint = seq(minx-2*r, maxx+2*r, 2 * dis)
+    ypoint = seq(miny-2*r, maxy+2*r, 1.5 * r)
     ly = length(ypoint)
     lx = length(xpoint)
     xpoint = rep(xpoint, each = ly)
@@ -113,9 +113,6 @@ Single.point.Voronoi.LAI.sum=function(minx, maxx, miny, maxy, boundary,a,b,r)
     bnew = rbind(HS, LS, YS, ZD, KD, MGL, SQL, HTQ, HBL, 
                  SMQ, QKQ, HKQ, JSQ, NJQ, BNQ, CY, BH, HH, FH, LYY, 
                  QT, LX)
-    bnew = subset(bnew, bnew[, 1] > (minx + boundary) & bnew[, 
-                                                             1] < (maxx - boundary) & bnew[, 2] > (miny + boundary) & 
-                    bnew[, 2] < (maxy - boundary))
     bnew
   }
   strata = c(0, strata, Inf)
