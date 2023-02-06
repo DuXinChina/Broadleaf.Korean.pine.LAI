@@ -178,6 +178,8 @@ print(Local.single.point.Voronoi.LAI(minx, maxx, miny, maxy, boundary,a, b, r, L
 #########################################################################
 #########################################################################
 pointa=a
+library(rgeos)
+library(sf)
 library(ggforce)
 library(ggplot2)
 library(grDevices)
