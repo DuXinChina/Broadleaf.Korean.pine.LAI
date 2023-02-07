@@ -1,5 +1,6 @@
 plot.Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b,strata,r,Lr) 
 {
+  option(warn=-1)
 Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b,strata,r,Lr) 
 {
   library(tcltk)
@@ -447,12 +448,3 @@ ggplot() + geom_raster(data = point, aes(x = x, y = y, fill = LAI)) +
   geom_circle(data=pointa,aes(x0=x, y0=y,r=Lr),color="black",alpha=0.7)+
   geom_point(data=pointa,aes(x=x,y=y))
 }
-
-
-
-
-
-  
-  
-
-  
