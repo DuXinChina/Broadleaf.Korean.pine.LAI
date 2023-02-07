@@ -1,5 +1,6 @@
 plot.Local.single.point.Voronoi.LAI=function (minx, maxx, miny, maxy, boundary,a, b, r, Lr) 
 {
+  option(warn=-1)
 Local.single.point.Voronoi.LAI=function (minx, maxx, miny, maxy, boundary,a, b, r, Lr) 
 {
   library(stats)
@@ -342,7 +343,6 @@ poldata$LAI=unique(ab12_1$LAI)
 ggplot(poldata) + 
   geom_sf(data = poldata, aes(fill = LAI)) + 
   scale_fill_gradientn(colours = c("lightyellow","yellow", "yellow2", "green", "green3", "green4"))+
-  geom_point(data=b,aes(x=x,y=y))+
   theme_classic()+
   geom_circle(data=pointa,aes(x0=x, y0=y,r=Lr),color="black",alpha=0.7)+
   geom_point(data=pointa,aes(x=x,y=y))
