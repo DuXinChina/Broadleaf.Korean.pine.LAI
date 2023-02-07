@@ -1,6 +1,6 @@
 plot.Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b,strata,r,Lr) 
 {
-  option(warn=-1)
+  options(warn=-1)
 Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a,b,strata,r,Lr) 
 {
   library(tcltk)
