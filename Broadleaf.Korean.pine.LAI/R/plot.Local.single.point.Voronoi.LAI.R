@@ -174,9 +174,7 @@ Local.single.point.Voronoi.LAI=function (minx, maxx, miny, maxy, boundary,a, b, 
   result
 }
 print(Local.single.point.Voronoi.LAI(minx, maxx, miny, maxy, boundary,a, b, r, Lr) )
-#########################################################################
-#########################################################################
-#########################################################################
+
 pointa=a
 library(rgeos)
 library(sf)
