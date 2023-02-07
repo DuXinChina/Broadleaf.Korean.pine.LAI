@@ -238,9 +238,7 @@ Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a
   result
 }
 print(Local.single.point.Voronoi.LAI.sum(minx, maxx, miny, maxy, boundary,a,b,strata,r,Lr))
-  #########################################################################
-  #########################################################################
-  #########################################################################
+
   
   maxr=max(r)
   pointa=a
