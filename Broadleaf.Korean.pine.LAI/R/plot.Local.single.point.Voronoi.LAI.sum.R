@@ -243,6 +243,7 @@ print(Local.single.point.Voronoi.LAI.sum(minx, maxx, miny, maxy, boundary,a,b,st
   
   maxr=max(r)
   pointa=a
+  library(raster)
   library(rgeos)
   library(sf)
   library(ggplot2)
