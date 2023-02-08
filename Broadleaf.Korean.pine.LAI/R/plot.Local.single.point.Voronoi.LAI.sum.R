@@ -438,9 +438,10 @@ for (i in 2:length(Forest_strata))
   setTkProgressBar(pb, i * 100/length(Forest_strata), "Finish", info)
 }
 close(pb)
-
-point=as.data.frame(shape_r1,xy=T)
-colnames(point)=c("x","y","LAI")
+  shape_r1 = as(shape_r1, "SpatialPixelsDataFrame")
+  point = as.data.frame(shape_r1)
+  point=data.frame(x=point$x,y=point$y,LAI=point$layer)
+  point=subset(point,point$LAI>0)
 
 ggplot() + geom_raster(data = point, aes(x = x, y = y, fill = LAI)) + 
   theme_classic() + 
