@@ -1500,7 +1500,7 @@ Broadleaf.Korean.pine.LAI::plot.Local.single.point.Voronoi.LAI(minx=0,maxx=50,mi
 ## 1     1.961598           0              1  0.02266904    0.977331
 ```
 
-![21.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets\21.1.png)
+![21.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/21.1.png)
 
 ### 2.22 plot.Local.single.point.Voronoi.LAI.sum(minx,maxx,miny,maxy,a,b,strata,r,Lr)
 
@@ -1558,4 +1558,4 @@ Broadleaf.Korean.pine.LAI::plot.Local.single.point.Voronoi.LAI.sum(minx=0,maxx=5
 ## 1     1.961076           0              1  0.09510175   0.9048982    1.140772
 ```
 
-![22.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets\22.1.png)
+![22.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/22.1.png)
