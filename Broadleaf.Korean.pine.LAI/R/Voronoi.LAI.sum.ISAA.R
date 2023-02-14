@@ -1,5 +1,5 @@
 
-Voronoi.LAI.sum.ISAA=function(minx,maxx,miny,maxy,b,strata,r,indis,lag)
+Voronoi.LAI.sum.ISAA=function(minx,maxx,miny,maxy,boundary,b,strata,r,indis,lag)
 {
 library(ape)
 LAI.Vaule=function(minx,maxx,miny,maxy,a,b,strata,r)
