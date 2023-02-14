@@ -1,5 +1,5 @@
 
-Voronoi.LAI.sum.ISAA=function(minx,maxx,miny,maxy,a,b,strata,r,indis,lag)
+Voronoi.LAI.sum.ISAA=function(minx,maxx,miny,maxy,b,strata,r,indis,lag)
 {
 library(ape)
 LAI.Vaule=function(minx,maxx,miny,maxy,a,b,strata,r)
@@ -208,7 +208,7 @@ result$LAI=LAI
 result
 }
 
-#¼ÆËã¾ùÔÈ²¼µãµÄºÏÀí·Ö¸î·ÖÊı
+#è®¡ç®—å‡åŒ€å¸ƒç‚¹çš„åˆç†åˆ†å‰²åˆ†æ•°
 maxx1=maxx-boundary
 minx1=minx+boundary
 maxy1=maxy-boundary
@@ -220,7 +220,7 @@ n=min(nx,ny)
 I=matrix(NA,n,1)
 Z=matrix(NA,n,1)
 distance=matrix(NA,n,1)
-####Éú³É¾ùÔÈ²¼µã
+####ç”Ÿæˆå‡åŒ€å¸ƒç‚¹
 x=seq(minx,maxx,by=indis)
 y=seq(miny,maxy,by=indis)
 xy=expand.grid(x,y)
@@ -273,4 +273,3 @@ p=p+geom_hline(aes(yintercept=1.96/yBL),linetype=5,col="black")+
   theme(legend.title=element_blank(),legend.position = c(0.8,0.8))
 p
 }
-
