@@ -1558,9 +1558,9 @@ Broadleaf.Korean.pine.LAI::plot.Local.single.point.Voronoi.LAI.sum(minx=0,maxx=5
 
 ![22.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/22.1.png)
 
-### 2.24 Voronoi.LAI.sum.ISAA(minx, maxx, miny, maxy, boundary, b, strata, r, indis, lag) 
+### 2.23 Voronoi.LAI.sum.ISAA(minx, maxx, miny, maxy, boundary, b, strata, r, indis, lag) 
 
-2.24.1功能介绍：
+2.23.1功能介绍：
 
 基于分层泰森多边形法进行复层林内叶面积指数的增量空间自相关分析
 
@@ -1586,7 +1586,7 @@ indis---初始距离
 
 lag---滞后距增量
 
-2.24.3 例：
+2.23.3 例：
 
 ```{r}
 b=Broadleaf.Korean.pine.LAI::b
@@ -1600,14 +1600,15 @@ head(b)
 ## 6 39.511178  5.185569 53.03717 25      HS 
 Broadleaf.Korean.pine.LAI::Voronoi.LAI.sum.ISAA(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, strata=c(10,16,30),r=c(2,2.5,3.5,4), indis=1, lag=1) 
 ```
-### 2.25 Voronoi.pointcloud(minx, maxx, miny, maxy, boundary, b, seq, strata, r, 
+![2.23.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.23.1.png)
+### 2.24 Voronoi.pointcloud(minx, maxx, miny, maxy, boundary, b, seq, strata, r, 
     S, theta, phi) 
 
-2.25.1功能介绍：
+2.24.1功能介绍：
 
 基于分层泰森多边形反演叶面积的三维空间分布，并以点云绘图
 
-2.23.2参数意义：
+2.24.2参数意义：
 
 minx---样地横坐标最小范围
 
@@ -1633,7 +1634,7 @@ theta---绘图水平翻转角度
 
 phi---绘图垂直翻转角度
 
-2.25.3 例：
+2.24.3 例：
 
 ```{r}
 b=Broadleaf.Korean.pine.LAI::b
@@ -1646,5 +1647,9 @@ head(b)
 ## 5  6.108164 25.639671 35.55580 25      HS
 ## 6 39.511178  5.185569 53.03717 25      HS 
 Broadleaf.Korean.pine.LAI::Voronoi.pointcloud(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, seq=100, strata=c(10,16,30),r=c(2,2.5,3.5,4), S=1.5, theta=120, phi=20) 
+```
+![2.24.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.24.1.png)
+```{r}
 Broadleaf.Korean.pine.LAI::Voronoi.pointcloud(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, seq=100, strata=c(10,16,30),r=c(2,2.5,3.5,4), S=1.5, theta=0, phi=90) 
 ```
+![2.24.2](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.24.2.png)
