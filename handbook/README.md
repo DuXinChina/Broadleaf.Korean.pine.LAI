@@ -1601,8 +1601,7 @@ head(b)
 Broadleaf.Korean.pine.LAI::Voronoi.LAI.sum.ISAA(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, strata=c(10,16,30),r=c(2,2.5,3.5,4), indis=1, lag=1) 
 ```
 ![2.23.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.23.1.png)
-### 2.24 Voronoi.pointcloud(minx, maxx, miny, maxy, boundary, b, seq, strata, r, 
-    S, theta, phi) 
+### 2.24 Voronoi.pointcloud(minx, maxx, miny, maxy, boundary, b, seq, strata, r, S, theta, phi) 
 
 2.24.1功能介绍：
 
