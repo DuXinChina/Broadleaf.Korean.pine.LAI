@@ -1600,3 +1600,51 @@ head(b)
 ## 6 39.511178  5.185569 53.03717 25      HS 
 Broadleaf.Korean.pine.LAI::Voronoi.LAI.sum.ISAA(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, strata=c(10,16,30),r=c(2,2.5,3.5,4), indis=1, lag=1) 
 ```
+### 2.25 Voronoi.pointcloud(minx, maxx, miny, maxy, boundary, b, seq, strata, r, 
+    S, theta, phi) 
+
+2.25.1功能介绍：
+
+基于分层泰森多边形反演叶面积的三维空间分布，并以点云绘图
+
+2.23.2参数意义：
+
+minx---样地横坐标最小范围
+
+maxx---样地横坐标最大范围
+
+miny---样地纵坐标最小范围
+
+maxy---样地纵坐标最大范围
+
+boundary---缓冲区宽度
+
+b---样地中的林木坐标、树种、胸径
+
+seq---绘制点云时的空间分辨率
+
+strata---不同林层间的分割高度
+
+r---将在林分各林层中没有林木分布的位置添加样点，以避免以林木为中心的泰森多边形过大。r为不同林层添加样点构成泰森多边形外接圆的半径
+
+S---林分内平均冠形率，冠长与冠幅的比例
+
+theta---绘图水平翻转角度
+
+phi---绘图垂直翻转角度
+
+2.25.3 例：
+
+```{r}
+b=Broadleaf.Korean.pine.LAI::b
+head(b)
+##           x         y      DBH  H Species
+## 1 33.428848 18.981981 65.58075 35      HS
+## 2  6.434608 42.039176 66.18077 35      HS
+## 3 18.146064 19.266050 52.26441 25      HS
+## 4 27.592828 13.896808 32.36649 25      HS
+## 5  6.108164 25.639671 35.55580 25      HS
+## 6 39.511178  5.185569 53.03717 25      HS 
+Broadleaf.Korean.pine.LAI::Voronoi.pointcloud(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, seq=100, strata=c(10,16,30),r=c(2,2.5,3.5,4), S=1.5, theta=120, phi=20) 
+Broadleaf.Korean.pine.LAI::Voronoi.pointcloud(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, seq=100, strata=c(10,16,30),r=c(2,2.5,3.5,4), S=1.5, theta=0, phi=90) 
+```
