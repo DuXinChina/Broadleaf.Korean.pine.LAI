@@ -1588,7 +1588,7 @@ lag---滞后距增量
 
 2.23.3 例：
 
-```{r}
+```R
 b=Broadleaf.Korean.pine.LAI::b
 head(b)
 ##           x         y      DBH  H Species
@@ -1636,7 +1636,7 @@ phi---绘图垂直翻转角度
 
 2.24.3 例：
 
-```{r}
+```{R
 b=Broadleaf.Korean.pine.LAI::b
 head(b)
 ##           x         y      DBH  H Species
@@ -1649,7 +1649,7 @@ head(b)
 Broadleaf.Korean.pine.LAI::Voronoi.pointcloud(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, seq=100, strata=c(10,16,30),r=c(2,2.5,3.5,4), S=1.5, theta=120, phi=20) 
 ```
 ![2.24.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.24.1.png)
-```{r}
+```R
 Broadleaf.Korean.pine.LAI::Voronoi.pointcloud(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, seq=100, strata=c(10,16,30),r=c(2,2.5,3.5,4), S=1.5, theta=0, phi=90) 
 ```
 ![2.24.2](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.24.2.png)
