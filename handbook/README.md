@@ -1635,7 +1635,7 @@ phi---绘图垂直翻转角度
 
 2.24.3 例：
 
-```{R
+```R
 b=Broadleaf.Korean.pine.LAI::b
 head(b)
 ##           x         y      DBH  H Species
