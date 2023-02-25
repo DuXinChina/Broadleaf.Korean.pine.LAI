@@ -1,10 +1,10 @@
 Package: Broadleaf.Korean.pine.LAI
 Type: Package
-Title: 分析阔叶红松林及相关生态系统叶面积指数
+Title: Broadleaf.Korean.pine.LAI
 Version: 0.3.0
 Author: 杜昕 董雪
-Maintainer: 
-Description: 分析阔叶红松林及相关生态系统叶面积指数
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: 以传统方法及分层泰森多边形法分析阔叶红松林叶面积指数
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
