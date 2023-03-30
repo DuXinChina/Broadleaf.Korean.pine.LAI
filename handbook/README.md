@@ -1558,7 +1558,7 @@ Broadleaf.Korean.pine.LAI::plot.Local.single.point.Voronoi.LAI.sum(minx=0,maxx=5
 
 ![22.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/22.1.png)
 
-### 2.23 Voronoi.LAI.sum.ISAA(minx, maxx, miny, maxy, boundary, b, strata, r, indis, lag) 
+### 2.23 Voronoi.LAI.sum.ISAA(minx, maxx, miny, maxy, boundary, b, seq, strata, r, indis, lag) 
 
 2.23.1功能介绍：
 
@@ -1577,6 +1577,8 @@ maxy---样地纵坐标最大范围
 boundary---缓冲区宽度
 
 b---样地中的林木坐标、树种、胸径
+
+seq---空间分辨率
 
 strata---不同林层间的分割高度
 
@@ -1598,7 +1600,7 @@ head(b)
 ## 4 27.592828 13.896808 32.36649 25      HS
 ## 5  6.108164 25.639671 35.55580 25      HS
 ## 6 39.511178  5.185569 53.03717 25      HS 
-Broadleaf.Korean.pine.LAI::Voronoi.LAI.sum.ISAA(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, strata=c(10,16,30),r=c(2,2.5,3.5,4), indis=1, lag=1) 
+Broadleaf.Korean.pine.LAI::Voronoi.LAI.sum.ISAA(minx=0, maxx=50, miny=0, maxy=50, boundary=5, b=b, seq=20, strata=c(10,16,30),r=c(2,2.5,3.5,4), indis=1, lag=1) 
 ```
 ![2.23.1](https://github.com/DuXinChina/Broadleaf.Korean.pine.LAI/blob/main/handbook/assets/2.23.1.png)
 ### 2.24 Voronoi.pointcloud(minx, maxx, miny, maxy, boundary, b, seq, strata, r, S, theta, phi) 
