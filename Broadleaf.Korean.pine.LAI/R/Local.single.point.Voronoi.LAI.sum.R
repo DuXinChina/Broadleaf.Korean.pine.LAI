@@ -151,19 +151,19 @@ Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a
   point = acenterpoint
   stra_single = Forest_strata[[1]]
   Lbnew1 = subset(stra_single, stra_single[, 1] >= (point[1, 
-                                                          1] - 1.5 * r[1]) & stra_single[, 1] <= (point[1, 1] + 
-                                                                                                    1.5 * r[1]) & stra_single[, 2] >= (point[1, 2] - 1.5 * 
-                                                                                                                                         r[1]) & stra_single[, 2] <= (point[1, 2] + 1.5 * r[1]))
+                                                          1] - 2 * r[1]) & stra_single[, 1] <= (point[1, 1] + 
+                                                                                                    2 * r[1]) & stra_single[, 2] >= (point[1, 2] - 2 * 
+                                                                                                                                         r[1]) & stra_single[, 2] <= (point[1, 2] + 2 * r[1]))
   Lbnew1$d = (point[1, 1] - Lbnew1[, 1])^2 + (point[1, 2] - 
                                                 Lbnew1[, 2])^2
   Lbnew1 = Lbnew1[which.min(Lbnew1$d), ]
 
   for (i in 2:nrow(point)) {
     Lbnew = subset(stra_single, stra_single[, 1] >= (point[i, 
-                                                           1] - 1.5 * r[1]) & stra_single[, 1] <= (point[i, 
-                                                                                                         1] + 1.5 * r[1]) & stra_single[, 2] >= (point[i, 
-                                                                                                                                                       2] - 1.5 * r[1]) & stra_single[, 2] <= (point[i, 
-                                                                                                                                                                                                     2] + 1.5 * r[1]))
+                                                           1] - 2 * r[1]) & stra_single[, 1] <= (point[i, 
+                                                                                                         1] + 2 * r[1]) & stra_single[, 2] >= (point[i, 
+                                                                                                                                                       2] - 2 * r[1]) & stra_single[, 2] <= (point[i, 
+                                                                                                                                                                                                     2] + 2 * r[1]))
     Lbnew$d = (point[i, 1] - Lbnew[, 1])^2 + (point[i, 2] - 
                                                 Lbnew[, 2])^2
     Lbnew = Lbnew[which.min(Lbnew$d), ]
@@ -175,20 +175,20 @@ Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a
   for (j in 2:length(Forest_strata)) {
     stra_single = Forest_strata[[j]]
     Lbnewn = subset(stra_single, stra_single[, 1] >= (point[1, 
-                                                            1] - 1.5 * r[j]) & stra_single[, 1] <= (point[1, 
-                                                                                                          1] + 1.5 * r[j]) & stra_single[, 2] >= (point[1, 
-                                                                                                                                                        2] - 1.5 * r[j]) & stra_single[, 2] <= (point[1, 
-                                                                                                                                                                                                      2] + 1.5 * r[j]))
+                                                            1] - 2 * r[j]) & stra_single[, 1] <= (point[1, 
+                                                                                                          1] + 2 * r[j]) & stra_single[, 2] >= (point[1, 
+                                                                                                                                                        2] - 2 * r[j]) & stra_single[, 2] <= (point[1, 
+                                                                                                                                                                                                      2] + 2 * r[j]))
     Lbnewn$d = (point[1, 1] - Lbnewn[, 1])^2 + (point[1, 
                                                       2] - Lbnewn[, 2])^2
     Lbnewn = Lbnewn[which.min(Lbnewn$d), ]
 
     for (i in 2:nrow(point)) {
       Lbnew = subset(stra_single, stra_single[, 1] >= (point[i, 
-                                                             1] - 1.5 * r[j]) & stra_single[, 1] <= (point[i, 
-                                                                                                           1] + 1.5 * r[j]) & stra_single[, 2] >= (point[i, 
-                                                                                                                                                         2] - 1.5 * r[j]) & stra_single[, 2] <= (point[i, 
-                                                                                                                                                                                                       2] + 1.5 * r[j]))
+                                                             1] - 2 * r[j]) & stra_single[, 1] <= (point[i, 
+                                                                                                           1] + 2 * r[j]) & stra_single[, 2] >= (point[i, 
+                                                                                                                                                         2] - 2 * r[j]) & stra_single[, 2] <= (point[i, 
+                                                                                                                                                                                                       2] + 2 * r[j]))
       Lbnew$d = (point[i, 1] - Lbnew[, 1])^2 + (point[i, 
                                                       2] - Lbnew[, 2])^2
       Lbnew = Lbnew[which.min(Lbnew$d), ]
