@@ -3,6 +3,7 @@ function (minx, maxx, miny, maxy, boundary, a, b, strata, r, Min_com_edge)
 {
 library(tcltk)
 library(deldir)
+library(grDevices)
 Voronoi.LAI.mult = function(minx, maxx, miny, maxy, boundary, 
 b, r) {
 dis = r/2 * sqrt(3)
