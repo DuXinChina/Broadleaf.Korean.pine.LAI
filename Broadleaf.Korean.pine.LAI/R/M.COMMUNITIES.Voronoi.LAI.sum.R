@@ -159,8 +159,8 @@ ConvexHull_point=function(a,Min_com_edge)
         {
                 point=rbind(new_point,hull_vertices)
                 pointn=chull(point)
-                point=point[pointn,]
-                identical(hull_vertices, point)
+                if (1 %in% pointn) TRUE
+                else F
         }
         inside_row=apply(point_xy,1,new_point_inside)
         point_xy=point_xy[inside_row,]
