@@ -241,10 +241,10 @@ for (i in 1:length(Forest_strata)) {
 weightLAI[i, ] = colSumsLAI[i] * i
 }
 Strata_cont = sum(weightLAI)/(LAIsum * mean(1:length(Forest_strata)))
-result = data.frame(mean(a$x), mean(a$y), aresult, minLAI, maxLAI, meanLAI, 
+result = data.frame(mean(a$x), mean(a$y), minLAI, maxLAI, meanLAI, 
 sdLAI, Gap_percent, Canopy_percent, N_L_Percent, B_L_Percent, 
 Strata_cont)
-colnames(result) = c("x", "y", "LAI", "Local_min_LAI", "Local_max_LAI", 
+colnames(result) = c("x", "y", "Local_min_LAI", "Local_max_LAI", 
  "Local_mean_LAI", "Local_sd_LAI", "Gap_percent", "Canopy_percent", 
  "N_L_Percent", "B_L_Percent", "Strata_cont")
 result
