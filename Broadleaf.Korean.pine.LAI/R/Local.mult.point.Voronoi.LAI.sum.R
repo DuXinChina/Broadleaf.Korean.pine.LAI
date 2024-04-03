@@ -152,6 +152,7 @@ Local.single.point.Voronoi.LAI.sum = function(minx, maxx, miny, maxy, boundary,a
     }
     acenterpoint=Neighbourhood.single(a, acenterpoint, Lr)[, 1:2]
   point = acenterpoint
+  point=rbind(a,point)
   stra_single = Forest_strata[[1]]
   Lbnew1 = subset(stra_single, stra_single[, 1] >= (point[1, 
                                                           1] - 2 * r[1]) & stra_single[, 1] <= (point[1, 1] + 
