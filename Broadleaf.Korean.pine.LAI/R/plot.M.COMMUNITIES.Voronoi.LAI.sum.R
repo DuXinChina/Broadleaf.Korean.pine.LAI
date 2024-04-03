@@ -175,7 +175,7 @@ plot.M.COMMUNITIES.Voronoi.LAI.sum=function(minx,maxx,miny,maxy,a,b,strata,r,Min
         else F
       }
       inside_row = apply(point_xy, 1, new_point_inside)
-      point_xy = point_xy[inside_row, ]
+      point_xy = point_xy[!inside_row, ]
       point_xy
       list(point_xy = point_xy, hull_vertices = hull_vertices)
     }
