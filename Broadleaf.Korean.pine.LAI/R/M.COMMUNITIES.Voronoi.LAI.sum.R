@@ -163,7 +163,7 @@ ConvexHull_point=function(a,Min_com_edge)
                 else F
         }
         inside_row=apply(point_xy,1,new_point_inside)
-        point_xy=point_xy[inside_row,]
+        point_xy=point_xy[!inside_row,]
         point_xy
 }
 point=ConvexHull_point(a,Min_com_edge)
