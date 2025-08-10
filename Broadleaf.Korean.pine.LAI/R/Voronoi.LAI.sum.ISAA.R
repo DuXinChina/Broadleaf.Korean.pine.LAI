@@ -305,8 +305,8 @@ Voronoi.LAI.sum.ISAA=function (minx, maxx, miny, maxy, boundary, b, seq, strata,
     geom_hline(aes(yintercept = 0), linetype = 1, col = "gray", size = 1) + 
     geom_line(aes(y = Moran_I,group = Index)) + 
     geom_point(aes(y = Moran_I, shape = Index), size = 2)
-  p = p + scale_y_continuous(sec.axis = sec_axis(~. * yBL, name = "Z_Score")) + 
-    theme_bw()
+  p = p + theme_bw()
   p = p + theme(legend.title = element_blank(), legend.position = c(0.8,0.8))
   p
 }
+
