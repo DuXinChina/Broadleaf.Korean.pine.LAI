@@ -7,6 +7,7 @@ LAI.mult=function (a, b, r)
   LAI.single = function(a, b, r) {
     Neighbourhood.single = function(a, b, r) {
       Neighbourhood.single1 = function(a, b) {
+        a=matrix(a,1,2)
         c = b[, 1:2]
         for (i in 1:nrow(b)) {
           c[i, ] = (b[i, 1:2] - a[1, 1:2])^2
@@ -151,4 +152,5 @@ LAI.mult=function (a, b, r)
                   "Broadleaf_LAI", "N_L_percent", "B_L_percent")
   rownames(e) = 1:nrow(a)
   list(LAI = d, B_N_LAI = e)
+
 }
